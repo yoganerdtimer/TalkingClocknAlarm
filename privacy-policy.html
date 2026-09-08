@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Talking Clock &amp; Focus Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+
+    <header class="page-header">
+        <img src="assets/ic_launcher.png" alt="Talking Clock &amp; Focus Timer app icon" class="app-icon">
+        <div>
+            <h1>Privacy Policy</h1>
+            <p class="app-version" style="margin-bottom:0;">Talking Clock &amp; Focus Timer · App version <strong>1.3</strong> · Last updated: <strong>September 7, 2026</strong></p>
+        </div>
+    </header>
+
+    <div class="section">
+        <p>This Privacy Policy describes how the <strong>Talking Clock &amp; Focus Timer</strong> app ("the App") handles information when you use it on your Android device. The App is offered on Google Play and is intended to comply with applicable privacy requirements, including Google Play's data safety and policy requirements.</p>
+    </div>
+
+    <div class="section">
+        <h2>1. Data collection and use</h2>
+        <p><strong>We do not operate our own servers for this App.</strong> Alarms, timers, and settings you create stay on your device (see Section 2), except as described below for ads and purchases.</p>
+        <p>The free version may show <strong>advertisements</strong> via <strong>Google AdMob</strong>. AdMob may collect and process device and advertising identifiers, IP address, and interaction data according to Google's policies. You can remove ads permanently with a one-time in-app purchase processed by <strong>Google Play Billing</strong>.</p>
+        <p>The App uses the <strong>INTERNET</strong> permission to load ads and complete purchases. We do not sell your personal data.</p>
+        <p>We do not:</p>
+        <ul>
+            <li>Collect your name, email, or phone number ourselves</li>
+            <li>Run our own analytics or crash-reporting SDKs beyond what Google Play / AdMob may use</li>
+            <li>Use ads or purchases for purposes other than showing ads and removing them</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>2. Data stored on your device</h2>
+        <p>The App stores the following data <strong>only on your device</strong>:</p>
+        <ul>
+            <li><strong>Alarms</strong> — Times, messages, repeat days, and talking-alarm preference (Room database)</li>
+            <li><strong>Focus timers</strong> — Names, work/break durations, cycle counts, and runtime state (Room database and SharedPreferences)</li>
+            <li><strong>Talking Clock settings</strong> — Interval, quiet hours, on/off state, speech options, and optional "always announce" mode (SharedPreferences)</li>
+            <li><strong>App settings</strong> — Notifications, sound, vibration, dark mode, headphone-only speech routing, whether ads have been removed, and in-app review prompt state (SharedPreferences)</li>
+        </ul>
+        <p>Alarm and timer data is used solely to run the App's features and is not uploaded by us. Ad and purchase processing is handled by Google as described in Section 1.</p>
+    </div>
+
+    <div class="section">
+        <h2>2.1 Advertising and remove-ads purchase</h2>
+        <p>Interstitial ads may appear when you open the App, switch tabs (subject to a cooldown), start a focus timer, or add/edit an alarm or timer. Ads are not shown while an alarm is ringing or after you purchase <strong>Remove ads</strong>.</p>
+        <p><strong>Remove ads</strong> is a one-time non-consumable purchase. Prices are set in Google Play by country (approximately <strong>USD 5.99</strong> in the United States, Canada, Europe, Australia, Singapore, Japan, and South Korea, and approximately <strong>USD 2.99</strong> elsewhere; local currency and taxes may apply). Purchase status is restored via Google Play when you reinstall or change devices while signed into the same Play account.</p>
+        <p>See Google's policies: <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and AdMob / Play Billing documentation.</p>
+    </div>
+
+    <div class="section">
+        <h2>2.2 Ratings and feedback</h2>
+        <p><strong>Rate on Google Play</strong> (Settings → Feedback &amp; ratings) uses Google Play’s <strong>In-App Review API</strong>. The review dialog is shown by Google; we do not receive your star rating or review text directly unless you choose to post it publicly on Google Play.</p>
+        <p>The App may occasionally prompt for a rating after meaningful use (for example completing a focus timer session or dismissing an alarm), subject to eligibility rules stored locally on your device (launch count, days since install, and cooldown between prompts). You can always rate manually from Settings.</p>
+        <p><strong>Send Feedback</strong> opens your email app with a category (Bug, Feature Request, General), your message, and basic device diagnostics (app version, Android version, device model). Email is sent from your device to <strong>siddhidatriapps@gmail.com</strong>; we do not operate a separate feedback server.</p>
+    </div>
+
+    <div class="section">
+        <h2>3. Android permissions</h2>
+        <p>The App requests permissions only as needed for alarm-clock and productivity features:</p>
+        <ul>
+            <li><strong>Notifications (POST_NOTIFICATIONS)</strong> — Alarm, talking-clock, and focus-timer notifications</li>
+            <li><strong>Exact alarm (SCHEDULE_EXACT_ALARM / USE_EXACT_ALARM)</strong> — Fire <strong>user-set alarms</strong> on schedule using <code>AlarmManager.setAlarmClock</code>. If exact alarms are not allowed by the system, the App falls back to inexact scheduling where possible. Optional “Always announce talking clock” uses standard scheduled alarms (not exact-alarm APIs).</li>
+            <li><strong>Vibrate (VIBRATE)</strong> — Vibration for alarms and timer notifications when enabled</li>
+            <li><strong>Foreground service (FOREGROUND_SERVICE / FOREGROUND_SERVICE_MEDIA_PLAYBACK)</strong> — Keep alarm ringing and talking-clock voice announcements running while active. Both foreground services declare the <strong>media playback</strong> type because they play ringtone and text-to-speech audio.</li>
+            <li><strong>Full-screen intent (USE_FULL_SCREEN_INTENT)</strong> — When a user alarm fires, the App may show alarm dismiss UI over the lock screen if the system grants this permission. If not granted, a high-priority notification is shown and the App opens the Alarm tab when you tap it. On Android 14 and later, you can manage this in system settings.</li>
+            <li><strong>Bluetooth (BLUETOOTH_CONNECT)</strong> — Used only when you turn on <strong>Headphones only when connected</strong> in Settings, to route speech to wired or Bluetooth headphones. Not used to collect data.</li>
+            <li><strong>Boot completed (RECEIVE_BOOT_COMPLETED)</strong> — Reschedule alarms and restore talking clock after device restart or app update</li>
+            <li><strong>Internet (INTERNET / ACCESS_NETWORK_STATE)</strong> — Load ads (AdMob) and process in-app purchases (Google Play Billing)</li>
+        </ul>
+        <p>Permissions are not used by us to sell your data. Network access is required for ads and purchases.</p>
+
+        <h3>3.1 Restricted permissions — why this App uses them</h3>
+        <p>Google Play and Android restrict some permissions to apps whose <strong>core functionality</strong> requires them. Talking Clock &amp; Focus Timer is an alarm-clock and timer utility. The permissions below are declared in the App manifest and used only for those features—not for analytics, ads, or background data collection.</p>
+
+        <p><strong>1. USE_EXACT_ALARM (Android 13 / API 33 and above)</strong></p>
+        <p>Android restricts <code>USE_EXACT_ALARM</code> to apps that need precisely timed, user-facing actions (for example alarm, calendar, or timer apps). On supported devices this permission is <strong>automatically granted at install</strong> when the App qualifies as an alarm-clock app.</p>
+        <p><strong>Why we need it:</strong> User-set alarms must fire at the exact minute you choose. The App schedules them with <code>AlarmManager.setAlarmClock</code>, the Android API intended for alarm-clock apps. Optional “Always announce talking clock” uses separate scheduled alarms and does not rely on exact-alarm permissions.</p>
+        <p>On Android 12 (API 31–32), the App uses <code>SCHEDULE_EXACT_ALARM</code> instead; you may be prompted to allow exact alarms in system settings on those versions.</p>
+
+        <p><strong>2. Foreground service types (Android 14 / API 34 and above)</strong></p>
+        <p>From Android 14 onward, apps must declare a <strong>foreground service type</strong> for each foreground service and justify its use. Generic foreground services without a declared type are not permitted for these workloads.</p>
+        <p><strong>Why we need it:</strong></p>
+        <ul>
+            <li><strong>AlarmService</strong> — <code>foregroundServiceType="mediaPlayback"</code>. Plays the alarm ringtone, vibration, and optional spoken alarm message until you dismiss the alarm.</li>
+            <li><strong>TalkingClockService</strong> — <code>foregroundServiceType="mediaPlayback"</code>. Plays on-device text-to-speech time announcements while the talking clock is enabled.</li>
+        </ul>
+        <p>The App declares <code>FOREGROUND_SERVICE</code> and <code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code>. These services run only while an alarm is ringing or the talking clock is actively announcing—not for unrelated background work.</p>
+
+        <p><strong>3. USE_FULL_SCREEN_INTENT — alarm UI on a locked device</strong></p>
+        <p>On Android 14 and above, <code>USE_FULL_SCREEN_INTENT</code> is treated as a restricted permission. It is <strong>automatically granted</strong> to apps whose core function includes alarms or phone calls. Other app categories may require separate user consent in system settings.</p>
+        <p><strong>Why we need it:</strong> When an alarm fires while your phone is locked, the App may show a full-screen alarm interface so you can see and dismiss the alarm without hunting through notifications. This permission is not used for marketing, overlays, or non-alarm content.</p>
+        <p>If full-screen intents are disabled on your device, the alarm still rings and appears as a high-priority notification; open the App or tap the notification to reach the <strong>Dismiss</strong> button on the Alarm tab. You can re-enable full-screen alarms in Android settings if you want the lock-screen experience.</p>
+
+        <p><strong>4. Your control on Android 14+</strong></p>
+        <p>Even when the permission is declared for a legitimate alarm app, Android lets you manage it: <strong>Settings → Apps → Talking Clock &amp; Focus Timer → (Alarms &amp; reminders / Full screen intents)</strong> (wording varies by device). Denying full-screen intent does not remove the App or your saved alarms; it only changes how the alarm appears when the screen is off or locked.</p>
+        <p>We do not use full-screen intents for talking-clock announcements or focus timers—only for active user alarms where a prominent dismiss UI is appropriate.</p>
+    </div>
+
+    <div class="section">
+        <h2>4. Text-to-speech (TTS)</h2>
+        <p>The App uses your device's built-in Text-to-Speech engine for the Talking Clock and talking alarms. Speech is generated on your device. The App does not send alarm messages or other text to our servers. Third-party TTS engines (for example Google Text-to-Speech) may have their own terms if you install or use them separately.</p>
+    </div>
+
+    <div class="section">
+        <h2>5. Device backup</h2>
+        <p>The App may participate in Android backup for some settings stored in SharedPreferences (for example talking-clock and app settings). <strong>Alarms and focus timers stored in the local database are excluded from cloud backup</strong> by the App's backup rules, so they are not restored automatically after reinstall unless you recreate them.</p>
+        <p>Backup is controlled by your device and Google account settings. We do not receive or store your backup data.</p>
+    </div>
+
+    <div class="section">
+        <h2>6. External links</h2>
+        <p>Settings may open Help, How-to Videos (YouTube playlist), or this Privacy Policy in your device's web browser or YouTube app. Those destinations are opened externally; the App does not embed a WebView or send your alarm, timer, or settings data when you open them.</p>
+    </div>
+
+    <div class="section">
+        <h2>7. Do Not Disturb and system settings</h2>
+        <p>When the device is in Do Not Disturb mode, the App may suppress alarm sound and skip starting an alarm session, depending on system rules. Focus-timer and talking-clock behavior may also respect Do Not Disturb and in-call state. Adjust Android sound, notification, exact-alarm, and full-screen-intent settings as needed for your use case.</p>
+    </div>
+
+    <div class="section">
+        <h2>8. Children's privacy</h2>
+        <p>The App does not knowingly collect personal information from anyone, including children. It is a utility app and does not target children.</p>
+    </div>
+
+    <div class="section">
+        <h2>9. Data security</h2>
+        <p>Alarm, timer, and settings data stay in the App's private storage on your device; their security depends on your device settings (lock screen, encryption). We do not transmit that data ourselves. Ads and purchases may involve network traffic handled by Google AdMob and Google Play Billing, as described in Sections 1 and 2.1.</p>
+    </div>
+
+    <div class="section">
+        <h2>10. Your rights and choices</h2>
+        <ul>
+            <li>Delete alarms and focus timers in the App</li>
+            <li>Turn off notifications, sound, or vibration in Settings</li>
+            <li>Disable "Headphones only when connected" if you do not want Bluetooth permission used</li>
+            <li>Manage exact alarms and full-screen intents in Android system settings</li>
+            <li>Rate the App or send feedback from Settings → Feedback &amp; ratings</li>
+            <li>Purchase <strong>Remove ads</strong> in Settings to stop advertisements</li>
+            <li>Uninstall the App to remove all of its data from your device</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>11. Google Play Data safety (summary)</h2>
+        <p>For the Play Console Data safety form, this App:</p>
+        <ul>
+            <li>May <strong>share data with Google AdMob</strong> for advertising (for example advertising ID / device identifiers) when ads are shown — see Google's policies</li>
+            <li>Uses <strong>Google Play Billing</strong> for the optional remove-ads purchase</li>
+            <li>Uses <strong>Google Play In-App Review</strong> for optional rating prompts (handled by Google Play)</li>
+            <li>Stores <strong>app activity / user-generated content locally</strong> (alarms, timer names, messages) and local review-prompt eligibility counters</li>
+            <li>Uses device permissions listed above for core alarm-clock and timer functionality; restricted permissions are justified in Section 3.1</li>
+            <li>Contains ads (unless removed by purchase); no developer account sign-in</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>12. Changes to this policy</h2>
+        <p>We may update this Privacy Policy from time to time. The "Last updated" date at the top will change when we do.</p>
+    </div>
+
+    <div class="section">
+        <h2>13. Rate the App</h2>
+        <p>Enjoying Talking Clock &amp; Focus Timer? Tap a star to share feedback or leave a review on Google Play.</p>
+        <div class="rating-box">
+            <p style="margin-bottom:0;"><strong>How would you rate the app?</strong></p>
+            <div class="rating-stars" id="rating-stars" role="group" aria-label="Rate Talking Clock and Focus Timer from 1 to 5 stars">
+                <button type="button" class="rating-star" data-stars="1" aria-label="1 star">&#9733;</button>
+                <button type="button" class="rating-star" data-stars="2" aria-label="2 stars">&#9733;</button>
+                <button type="button" class="rating-star" data-stars="3" aria-label="3 stars">&#9733;</button>
+                <button type="button" class="rating-star" data-stars="4" aria-label="4 stars">&#9733;</button>
+                <button type="button" class="rating-star" data-stars="5" aria-label="5 stars">&#9733;</button>
+            </div>
+            <p class="rating-hint" id="rating-hint">Tap a star — we may ask before opening email or Google Play.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>14. Contact</h2>
+        <div class="contact-box">
+            <p style="margin-bottom:0;">Questions about this Privacy Policy? Contact us at:<br><br><strong>siddhidatriapps@gmail.com</strong></p>
+        </div>
+    </div>
+
+    <p class="footer-note">Talking Clock &amp; Focus Timer · v1.3 · Siddhidatri Apps</p>
+
+</div>
+<script>
+(function () {
+    var PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.talkingclock.timer';
+    var SUPPORT_EMAIL = 'siddhidatriapps@gmail.com';
+    var stars = document.querySelectorAll('.rating-star');
+    var hint = document.getElementById('rating-hint');
+
+    function openEmail(starCount) {
+        var subject = encodeURIComponent('Talking Clock & Focus Timer feedback (' + starCount + ' star' + (starCount === 1 ? '' : 's') + ')');
+        var body = encodeURIComponent(
+            'Hi Siddhidatri Apps,\n\n' +
+            'My rating: ' + starCount + '/5 stars\n\n' +
+            'Feedback:\n'
+        );
+        window.location.href = 'mailto:' + SUPPORT_EMAIL + '?subject=' + subject + '&body=' + body;
+    }
+
+    function openPlayStore() {
+        window.open(PLAY_STORE_URL, '_blank', 'noopener,noreferrer');
+    }
+
+    function highlightStars(count) {
+        stars.forEach(function (btn) {
+            var value = parseInt(btn.getAttribute('data-stars'), 10);
+            btn.classList.toggle('selected', value <= count);
+        });
+    }
+
+    stars.forEach(function (btn) {
+        var count = parseInt(btn.getAttribute('data-stars'), 10);
+
+        btn.addEventListener('mouseenter', function () {
+            highlightStars(count);
+        });
+
+        btn.addEventListener('focus', function () {
+            highlightStars(count);
+        });
+
+        btn.addEventListener('click', function () {
+            highlightStars(count);
+            if (count <= 3) {
+                var sendEmail = window.confirm(
+                    'Would you like to tell us more about your ' + count + '-star rating by email?\n\n' +
+                    'We would really appreciate hearing what we can do better.'
+                );
+                if (sendEmail) {
+                    if (hint) hint.textContent = 'Opening your email app…';
+                    openEmail(count);
+                } else if (hint) {
+                    hint.textContent = 'No problem — thank you for rating the app.';
+                }
+            } else {
+                var leaveReview = window.confirm(
+                    'Would you consider giving us a review on Google Play?\n\n' +
+                    'It helps more people discover what you appreciate about Talking Clock & Focus Timer.'
+                );
+                if (leaveReview) {
+                    if (hint) hint.textContent = 'Opening Google Play…';
+                    openPlayStore();
+                } else if (hint) {
+                    hint.textContent = 'Thank you for your ' + count + '-star rating!';
+                }
+            }
+        });
+    });
+
+    var group = document.getElementById('rating-stars');
+    if (group) {
+        group.addEventListener('mouseleave', function () {
+            stars.forEach(function (btn) { btn.classList.remove('selected'); });
+        });
+    }
+})();
+</script>
+</body>
+</html>
